@@ -22,7 +22,8 @@ describe('Full API Tests', function() {
   });
 
   it('should store and read a string', function() {
-    var redisStore = new RedisStore(this.redis, this.prefix);
+    var redisStore = new RedisStore(this.prefix);
+    redisStore.setClient(this.redis);
     return redisStore.set('alpha', 'word')
       .bind(this)
       .then(function() {
@@ -34,7 +35,8 @@ describe('Full API Tests', function() {
       });
   });
   it('should store and read a number', function() {
-    var redisStore = new RedisStore(this.redis, this.prefix);
+    var redisStore = new RedisStore(this.prefix);
+    redisStore.setClient(this.redis);
     return redisStore.set('beta', 1)
       .bind(this)
       .then(function() {
@@ -46,7 +48,8 @@ describe('Full API Tests', function() {
       });
   });
   it('should store and read a boolean true', function() {
-    var redisStore = new RedisStore(this.redis, this.prefix);
+    var redisStore = new RedisStore(this.prefix);
+    redisStore.setClient(this.redis);
     return redisStore.set('beta-alpha', true)
       .bind(this)
       .then(function() {
@@ -58,7 +61,8 @@ describe('Full API Tests', function() {
       });
   });
   it('should store and read a boolean false', function() {
-    var redisStore = new RedisStore(this.redis, this.prefix);
+    var redisStore = new RedisStore(this.prefix);
+    redisStore.setClient(this.redis);
     return redisStore.set('beta-beta', false)
       .bind(this)
       .then(function() {
@@ -70,7 +74,8 @@ describe('Full API Tests', function() {
       });
   });
   it('should store and read an Array', function() {
-    var redisStore = new RedisStore(this.redis, this.prefix);
+    var redisStore = new RedisStore(this.prefix);
+    redisStore.setClient(this.redis);
     return redisStore.set('gamma', [1, 2, 3])
       .bind(this)
       .then(function() {
@@ -82,7 +87,8 @@ describe('Full API Tests', function() {
       });
   });
   it('should store and read an Object', function() {
-    var redisStore = new RedisStore(this.redis, this.prefix);
+    var redisStore = new RedisStore(this.prefix);
+    redisStore.setClient(this.redis);
     var value = {
       a: 1,
       b: 'two',
@@ -100,7 +106,8 @@ describe('Full API Tests', function() {
   });
 
   it('should delete a value', function() {
-    var redisStore = new RedisStore(this.redis, this.prefix);
+    var redisStore = new RedisStore(this.prefix);
+    redisStore.setClient(this.redis);
     return redisStore.set('epsilon', 'word')
       .bind(this)
       .then(function() {
