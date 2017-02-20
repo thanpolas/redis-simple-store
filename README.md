@@ -17,7 +17,6 @@ npm install redis-simple-store --save
 ## Quick Start
 
 ```js
-
 var redis = require('redis');
 var RedisStore = require('redis-simple-store');
 
@@ -70,6 +69,30 @@ This method needs to be invoked before any other so you can pass the redis clien
 
 * `key` {string} The record key to delete.
 * **Returns**: {Promise(number)} A Bluebird Promise with the number of records deleted.
+
+## Examples
+
+### Exposing redis store as a model module
+
+**Filename**: `account.model.js`
+
+```js
+var RedisStore = require('redis-simple-store');
+
+var redisService = require('../some/local/redis/provider');
+
+
+var accountModel = module.exports = new RedisStore('app.account.');
+
+accountModel.init = function() {
+    redisService.getRedisClient()
+        .then(function(redisClient) {
+            accountModel.setClient(redisClient);
+        });
+};
+```
+
+You will need to initialize the model once and then all `get()`, `set()`, etc methods will be available from that model.
 
 ## Release History
 
