@@ -1,0 +1,43 @@
+{
+  "private": true,
+  "name": "__proto__",
+  "version": "0.0.0",
+  "main": "./lib/__proto__",
+  "description": "EDIT",
+  "homepage": "https://github.com/thanpolas/__proto__",
+  "bugs": "https://github.com/thanpolas/__proto__/issues",
+  "author": {
+    "name": "Thanasis Polychronakis",
+    "email": "thanpolas@gmail.com",
+    "url": "https://github.com/thanpolas"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thanpolas/__proto__"
+  },
+  "license": "MIT",
+  "keywords": [""],
+  "contributors": ["Thanasis Polychronakis"],
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/grunt jshint:lib && ./node_modules/.bin/mocha -b test/spec -u bdd  -R spec"
+  },
+  "dependencies": {
+    "cip": "1.0.0",
+    "bluebird": "3.4.0",
+    "lodash": "4.13.1"
+  },
+  "devDependencies": {
+    "grunt-release": "0.13.1",
+    "grunt-contrib-jshint": "1.0.0",
+    "load-grunt-tasks": "3.5.0",
+    "mocha": "2.5.3",
+    "grunt-mocha-test": "0.12.7",
+    "grunt": "1.0.1",
+    "chai": "3.5.0",
+    "sinon": "1.17.4",
+    "grunt-cli": "1.2.0"
+  }
+}
