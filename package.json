@@ -1,6 +1,6 @@
 {
   "name": "redis-simple-store",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "main": "./lib/redis-simple-store",
   "description": "A Simple key/value store for arbitrary values based on redis.",
   "homepage": "https://github.com/thanpolas/redis-simple-store",
