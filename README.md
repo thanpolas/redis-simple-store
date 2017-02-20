@@ -23,7 +23,8 @@ var RedisStore = require('redis-simple-store');
 
 var redisClient = redis.createClient();
 
-var redisStore = new RedisStore(redisClient, 'key-prefix.');
+var redisStore = new RedisStore('key-prefix.');
+redisStore.setClient(redisClient);
 
 redisStore.set('record-id', 'value')
     .bind(this) // bluebird promise
@@ -42,12 +43,17 @@ redisStore.set('record-id', 'value')
 
 ## API Reference
 
-### new RedisStore(redisClient, keyPrefix)
+### new RedisStore(keyPrefix)
 
 That is the way you instantiate the Redis Simple Store:
 
-* `redisClient` {redis} The redis package's instance, a  redis client that exposes `set`, `get` and `del` with node callbacks.
 * `keyPrefix` {string} Arbitrary key prefix to store all keys on, better that it ends with a full stop (`.`).
+
+### setClient(redisClient)
+
+This method needs to be invoked before any other so you can pass the redis client.
+
+* `redisClient` {redis} The redis package's instance, a  redis client that exposes `set`, `get` and `del` with node callbacks.
 
 ### set(key, value)
 
