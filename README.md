@@ -2,6 +2,8 @@
 
 > A Simple key/value store for arbitrary values based on redis.
 
+[![Build Status](https://travis-ci.org/thanpolas/redis-simple-store.svg?branch=master)](https://travis-ci.org/thanpolas/redis-simple-store)
+
 Redis Simple Store provides a simple API to store arbitrary values using the Redis string store. Everything is serialized using JSON.
 
 ## Install
