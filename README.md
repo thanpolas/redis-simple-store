@@ -1,28 +1,13 @@
-# __proto__
+# Redis Simple Store
 
-> Clone, edit, hack. An opinionated boilerplate for Node Libraries.
-
-[![Build Status](https://secure.travis-ci.org/thanpolas/__proto__.png?branch=master)](http://travis-ci.org/thanpolas/__proto__)
-
-To use, simply Clone, Enter directory, delete `.git` folder and start over:
-
-```shell
-git clone git@github.com:thanpolas/__proto__.git
-cd __proto__
-rm -rf .git
-git init
-git add .
-git commit "Boot!"
-```
-
-Boilerplate OSS follows...
+> A Simple key/value store for arbitrary values based on redis.
 
 ## Install
 
 Install the module using NPM:
 
 ```
-npm install YADDAYADDA --save
+npm install redis-simple-store --save
 ```
 ## <a name='TOC'>Table of Contents</a>
 
@@ -46,7 +31,7 @@ One more to go back without onez has together we know!
 > *Returns* `Object` A sanitized object.
 
 Clones the error object and strips it of all the `Error` getters (like `stack`) and the following attributes:
-    
+
     * `srcError`
 
 ```js

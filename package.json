@@ -1,11 +1,11 @@
 {
   "private": true,
-  "name": "__proto__",
+  "name": "redis-simple-store",
   "version": "0.0.0",
-  "main": "./lib/__proto__",
-  "description": "EDIT",
-  "homepage": "https://github.com/thanpolas/__proto__",
-  "bugs": "https://github.com/thanpolas/__proto__/issues",
+  "main": "./lib/redis-simple-store",
+  "description": "A Simple key/value store for arbitrary values based on redis.",
+  "homepage": "https://github.com/thanpolas/redis-simple-store",
+  "bugs": "https://github.com/thanpolas/redis-simple-store/issues",
   "author": {
     "name": "Thanasis Polychronakis",
     "email": "thanpolas@gmail.com",
@@ -13,31 +13,26 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/thanpolas/__proto__"
+    "url": "https://github.com/thanpolas/redis-simple-store"
   },
   "license": "MIT",
   "keywords": [""],
   "contributors": ["Thanasis Polychronakis"],
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=0.12.0"
   },
   "scripts": {
-    "test": "./node_modules/.bin/grunt jshint:lib && ./node_modules/.bin/mocha -b test/spec -u bdd  -R spec"
+    "test": "eslint lib/** && ./node_modules/.bin/mocha -b test/spec -u bdd  -R spec"
   },
   "dependencies": {
-    "cip": "1.0.0",
-    "bluebird": "3.4.0",
-    "lodash": "4.13.1"
+    "bluebird": "3.4.7"
   },
   "devDependencies": {
-    "grunt-release": "0.13.1",
-    "grunt-contrib-jshint": "1.0.0",
-    "load-grunt-tasks": "3.5.0",
-    "mocha": "2.5.3",
-    "grunt-mocha-test": "0.12.7",
-    "grunt": "1.0.1",
     "chai": "3.5.0",
-    "sinon": "1.17.4",
-    "grunt-cli": "1.2.0"
+    "eslint": "^3.11.1",
+    "grunt-release": "0.14.0",
+    "mocha": "3.2.0",
+    "grunt": "1.0.1",
+    "sinon": "1.17.7"
   }
 }

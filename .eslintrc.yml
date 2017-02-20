@@ -1,0 +1,44 @@
+env:
+  browser: false
+  commonjs: false
+  es6: true
+  node: true
+extends: 'eslint:recommended'
+
+parser: "babel-eslint"
+
+parserOptions:
+  sourceType: "module"
+  ecmaFeatures:
+    experimentalObjectRestSpread: true
+
+rules:
+  indent:
+    - error
+    - 2
+    - SwitchCase: 1
+  linebreak-style:
+    - error
+    - unix
+  quotes:
+    - error
+    - single
+  semi:
+    - error
+    - always
+  no-console:
+    - 0
+
+globals:
+  # Testing
+  suite: true
+  test: true
+  describe: true
+  it: true
+  setup: true
+  before: true
+  beforeEach: true
+  after: true
+  afterEach: true
+  teardown: true
+  assert: true
