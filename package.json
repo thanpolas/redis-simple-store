@@ -1,5 +1,4 @@
 {
-  "private": true,
   "name": "redis-simple-store",
   "version": "0.0.1",
   "main": "./lib/redis-simple-store",

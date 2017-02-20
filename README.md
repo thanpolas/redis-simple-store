@@ -67,7 +67,7 @@ That is the way you instantiate the Redis Simple Store:
 
 ## Release History
 
-- **v0.0.1**, *20 Feb 2017*
+- **v0.0.2**, *20 Feb 2017*
     - Big Bang
 
 ## License
