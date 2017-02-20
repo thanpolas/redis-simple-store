@@ -96,6 +96,8 @@ You will need to initialize the model once and then all `get()`, `set()`, etc me
 
 ## Release History
 
+- **v0.1.0**, *20 Feb 2017*
+    - **Breaking Change** Changed signature of constructor and introduced the `setClient()` method for defining the redis client at a different time from instanciation.
 - **v0.0.2**, *20 Feb 2017*
     - Big Bang
 
