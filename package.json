@@ -17,7 +17,7 @@
   },
   "license": "MIT",
   "keywords": [
-    ""
+    "redis"
   ],
   "contributors": [
     "Thanasis Polychronakis"
