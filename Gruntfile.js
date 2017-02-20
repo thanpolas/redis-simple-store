@@ -3,6 +3,7 @@
 module.exports = function (grunt) {
   // Load all grunt tasks
   grunt.task.loadNpmTasks('grunt-release');
+  grunt.task.loadNpmTasks('grunt-contrib-jshint');
 
   // Project configuration.
   grunt.initConfig({
@@ -20,6 +21,12 @@ module.exports = function (grunt) {
         commitMessage: 'releasing v<%= version %>', //default: 'release <%= version %>'
         tagMessage: 'v<%= version %>' //default: 'Version <%= version %>'
       }
+    },
+    jshint: {
+      options: {
+        jshintrc: true,
+      },
+      lib: ['lib/**/*.js'],
     },
   });
 

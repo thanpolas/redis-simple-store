@@ -26,7 +26,7 @@
     "node": ">=0.12.0"
   },
   "scripts": {
-    "test": "eslint lib/** && ./node_modules/.bin/mocha -b test/spec -u bdd  -R spec"
+    "test": "./node_modules/.bin/grunt jshint:lib && ./node_modules/.bin/mocha -b test/spec -u bdd  -R spec"
   },
   "dependencies": {
     "bluebird": "3.4.7",
@@ -34,9 +34,9 @@
   },
   "devDependencies": {
     "chai": "3.5.0",
-    "eslint": "^3.11.1",
     "grunt": "1.0.1",
     "grunt-release": "0.14.0",
+    "jshint": "^2.9.4",
     "mocha": "3.2.0",
     "redis": "^2.6.5",
     "sinon": "1.17.7"
