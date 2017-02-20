@@ -45,6 +45,30 @@ describe('Full API Tests', function() {
         expect(res).to.equal(1);
       });
   });
+  it('should store and read a boolean true', function() {
+    var redisStore = new RedisStore(this.redis, this.prefix);
+    return redisStore.set('beta-alpha', true)
+      .bind(this)
+      .then(function() {
+        return redisStore.get('beta-alpha');
+      })
+      .then(function(res) {
+        expect(res).to.be.a('boolean');
+        expect(res).to.be.true;
+      });
+  });
+  it('should store and read a boolean false', function() {
+    var redisStore = new RedisStore(this.redis, this.prefix);
+    return redisStore.set('beta-beta', false)
+      .bind(this)
+      .then(function() {
+        return redisStore.get('beta-beta');
+      })
+      .then(function(res) {
+        expect(res).to.be.a('boolean');
+        expect(res).to.be.false;
+      });
+  });
   it('should store and read an Array', function() {
     var redisStore = new RedisStore(this.redis, this.prefix);
     return redisStore.set('gamma', [1, 2, 3])
