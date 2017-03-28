@@ -3,6 +3,7 @@
  */
 var chai = require('chai');
 var expect = chai.expect;
+var Promise = require('bluebird');
 
 var RedisStore = require('../..');
 var redisService = require('../lib/redis.service');
@@ -120,4 +121,29 @@ describe('Full API Tests', function() {
         expect(res).to.be.null;
       });
   });
+  it('should store with expiration', function() {
+    this.timeout(5000);
+    var redisStore = new RedisStore(this.prefix);
+    redisStore.setClient(this.redis);
+    return redisStore.set('theta', 'value', 'EX', 3)
+      .bind(this)
+      .then(function() {
+        return redisStore.get('theta');
+      })
+      .then(function(res) {
+        expect(res).to.be.a('string');
+        expect(res).to.equal('value');
+
+        return new Promise(function (resolve) {
+          setTimeout(resolve, 3000);
+        });
+      })
+      .then(function() {
+        return redisStore.get('theta');
+      })
+      .then(function(res) {
+        expect(res).to.be.null;
+      });
+  });
+
 });

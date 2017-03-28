@@ -54,10 +54,11 @@ This method needs to be invoked before any other so you can pass the redis clien
 
 * `redisClient` {redis} The redis package's instance, a  redis client that exposes `set`, `get` and `del` with node callbacks.
 
-### set(key, value)
+### set(key, value, ...*)
 
 * `key` {string} The record key to store the value on.
 * `value` {*} Any type to store.
+* `...*` Any number of arguments like `'EX', 60` to define expiration for the set value.
 * **Returns**: {Promise(string)} A Bluebird Promise with the string `OK`.
 
 ### get(key)
@@ -96,6 +97,8 @@ You will need to initialize the model once and then all `get()`, `set()`, etc me
 
 ## Release History
 
+- **v0.2.0**, *28 Mar 2017*
+    - Added support for variable arguments on the `set()` method so as to facilitate expiring keys.
 - **v0.1.0**, *20 Feb 2017*
     - **Breaking Change** Changed signature of constructor and introduced the `setClient()` method for defining the redis client at a different time from instanciation.
 - **v0.0.2**, *20 Feb 2017*
