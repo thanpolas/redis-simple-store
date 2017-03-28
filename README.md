@@ -54,10 +54,11 @@ This method needs to be invoked before any other so you can pass the redis clien
 
 * `redisClient` {redis} The redis package's instance, a  redis client that exposes `set`, `get` and `del` with node callbacks.
 
-### set(key, value)
+### set(key, value, ...*)
 
 * `key` {string} The record key to store the value on.
 * `value` {*} Any type to store.
+* `...*` Any number of arguments like `'EX', 60` to define expiration for the set value.
 * **Returns**: {Promise(string)} A Bluebird Promise with the string `OK`.
 
 ### get(key)
